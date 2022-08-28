@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { BoxLayout } from "./component/BoxLayout";
+import { ListWrapper } from "./component/ListBox/ListWrapper";
+
+// local storage
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
+const items = [
+  {
+    title: "AMir",
+    check: false,
+  },
+  {
+    title: "Fatmia do this task please",
+  },
+  {
+    title: "Arkadi do this task please",
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BoxLayout headerTitle="Todo Title">
+      <ListWrapper items={items} />
+    </BoxLayout>
   );
 }
 
